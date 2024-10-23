@@ -10,8 +10,10 @@ from plotly import graph_objs as go
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
     page_title='How Votes Came In In 2020',
-    page_icon=':earth_americas:', # This is an emoji shortcode. Could be a URL too.
+    page_icon=':earth_americas:', 
+    layout = "wide"
 )
+
 
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
@@ -34,19 +36,6 @@ def get_json_data(state_ref):
         pd.json_normalize(state_df['vote_shares'])
     ).drop('vote_shares', axis=1)
 
-
-
-
-    # The data above has columns like:
-    # vote_shares
-    # votes
-    # eevp
-    # eevp_source
-    # timestamp
-
-    #
-
-
     # Convert years from string to integers
     state_df['time'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
     state_df['date'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
@@ -54,6 +43,27 @@ def get_json_data(state_ref):
    
 
     return state_df
+
+def plot_raw_data():
+    global fig
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['bidenj'], name='Biden', mode='lines+markers'))
+    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['trumpd'], name='Trump', mode='lines+markers', line=dict(color="#FF0000")))
+    fig.layout.update(title_text="Ballot Flow", 
+                xaxis=dict(
+        autorange=False,
+        range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"],
+        rangeslider=dict(
+            autorange=False,
+            range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"]
+        ),
+        type="date"
+    ))
+    fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
+    fig.add_annotation(x=date_in[0], y=(biden_hold[0] + .2),
+            text="You Are Here",
+            showarrow=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 PA_liveblog = pd.read_csv("data/PA_extract.csv")
 
@@ -78,31 +88,25 @@ Using checkpoints of election night data from NYT, this graphs how votes came in
 '''
 
 
-option = st.selectbox(
-  'Which state would you like to see?',
-    ('NC', 'PA'))
-
-state_df = get_json_data(state_ref = option)
 # Add some spacing
 ''
 ''
 st.write("Let's remember when it was..")
 
-left, middle = st.columns(2, vertical_alignment="bottom")
+left, middle, right = st.columns(3, vertical_alignment="bottom")
+option = left.selectbox(
+  'Which state would you like to see?',
+    ('NC', 'PA'))
+t = right.time_input("Time", value = datetime.time(8, 45))
+d = middle.date_input("Date", datetime.date(2020, 11, 4))
 
-t = middle.time_input("Time", value = datetime.time(8, 45))
-d = left.date_input("Date", datetime.date(2020, 11, 4))
 
-
+state_df = get_json_data(state_ref = option)
 st.write("Now showing the state at", d, t)
 
-''
-''
 dt_orig = datetime.datetime.combine(d, t)
 timezone = pytz.timezone('UTC')
 dt = timezone.localize(dt_orig) 
-print (dt)
-
 
 
 state_df = state_df.set_index('full_time')
@@ -113,12 +117,9 @@ loc_idx = state_df.index[iloc_idx]                             # if you want nam
 
 my_val = state_df.loc[loc_idx]   
 
-
 PA_liveblog = PA_liveblog.set_index('convert_date')
 PA_liveblog = PA_liveblog.loc[PA_liveblog.index.notnull()]
 PA_liveblog.sort_index(inplace=True)
-
-
 
 iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
 loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
@@ -136,45 +137,21 @@ curr_percent = round(votes_in[0] / max_votes, 3)
 
 
 
-
-st.write("The last update was given at", date_in[0])
-st.write(str(votes_in[0]), " votes are currently counted")
-st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
-
-
-st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
-
 # Filter the data
 filtered_state_df = state_df[
     (state_df['date'] <= d) &
     (state_df['time'] <= t)
 ]
 
-
-''
-''
 dat = state_df
-def plot_raw_data():
-    global fig
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['bidenj'], name='Biden', mode='lines+markers'))
-    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['trumpd'], name='Trump', mode='lines+markers', line=dict(color="#FF0000")))
-    fig.layout.update(title_text="Ballot Flow", 
-                xaxis=dict(
-        autorange=False,
-        range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"],
-        rangeslider=dict(
-            autorange=False,
-            range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"]
-        ),
-        type="date"
-    ))
-    fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
-    fig.add_annotation(x=date_in[0], y=(biden_hold[0] + .2),
-            text="You Are Here",
-            showarrow=True)
-    st.plotly_chart(fig, use_container_width=True)
-plot_raw_data()
+col1, col2 = st.columns([0.7, 0.3])
+with col1:
+    plot_raw_data()
+with col2:
+    st.write("The last update was given at", date_in[0])
+    st.write(str(votes_in[0]), " votes are currently counted")
+    st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
+    st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
 
 
 
