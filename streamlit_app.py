@@ -44,9 +44,9 @@ def get_json_data():
 
 
     # Convert years from string to integers
-    NC_df['time'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+    NC_df['time'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
     NC_df['date'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
-
+    NC_df['full_time']= pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
    
 
     return NC_df
@@ -71,7 +71,7 @@ But it's otherwise a great (and did I mention _free_?) source of data.
 
 
 
-t = st.time_input("The current time is", value="now")
+t = st.time_input("The current time is", value = datetime.time(8, 45))
 st.write("Now showing the state at", t)
 
 
@@ -79,10 +79,18 @@ d = st.date_input("The current date is", datetime.date(2020, 11, 4))
 st.write("Now showing the state on:", d)
 
 
+dt = pd.to_datetime(d+t)
+print (dt)
+
+NC_df = NC_df.set_index('full_time')
+nearest = NC_df.index.get_loc(dt, method='nearest')
+
+st.write("The state is:", nearest)
 
 # Filter the data
 filtered_NC_df = NC_df[
-    (NC_df['date'] <= d)
+    (NC_df['date'] <= d) &
+    (NC_df['time'] <= t)
 ]
 
 st.header('Eday Returns', divider='gray')
@@ -91,7 +99,7 @@ st.header('Eday Returns', divider='gray')
 
 st.line_chart(
     filtered_NC_df,
-    x='time',
+    x='full_time',
     y='bidenj',
 )
 
