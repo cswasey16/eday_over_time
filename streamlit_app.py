@@ -57,7 +57,7 @@ def get_json_data(state_ref):
 
 PA_liveblog = pd.read_csv("data/PA_extract.csv")
 
-PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce")
+PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True)
 
 
 
@@ -121,11 +121,23 @@ biden_hold = my_val['bidenj']
 max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
+##PA_liveblog = PA_liveblog.set_index('convert_date')
+##PA_liveblog.sort_index(inplace=True)
+##print(PA_liveblog.head())
+
+##iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+##loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
+
+##liveblog_val = PA_liveblog.loc[loc_idx]  
+
+
+
 st.write("The last update was given at", date_in[0])
 st.write(str(votes_in[0]), " votes are currently counted")
 st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
 
 
+##st.write(liveblog_val)
 # Filter the data
 filtered_state_df = state_df[
     (state_df['date'] <= d) &
