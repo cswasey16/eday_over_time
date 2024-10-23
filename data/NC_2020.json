@@ -1,0 +1,2432 @@
+[
+    {
+        "vote_shares": {
+            "trumpd": 0.933,
+            "bidenj": 0.067
+        },
+        "votes": 15,
+        "eevp": 0,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T00:24:22Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.766,
+            "bidenj": 0.234
+        },
+        "votes": 363,
+        "eevp": 0,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T00:44:21Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.629,
+            "bidenj": 0.371
+        },
+        "votes": 618,
+        "eevp": 0,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T00:44:48Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.562,
+            "trumpd": 0.428
+        },
+        "votes": 2687918,
+        "eevp": 45,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:18:50Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.558,
+            "trumpd": 0.431
+        },
+        "votes": 3289832,
+        "eevp": 55,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:20:12Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.541,
+            "trumpd": 0.448
+        },
+        "votes": 3542888,
+        "eevp": 60,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:23:24Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.54,
+            "trumpd": 0.449
+        },
+        "votes": 3556494,
+        "eevp": 60,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:26:21Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.54,
+            "trumpd": 0.449
+        },
+        "votes": 3556515,
+        "eevp": 60,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:26:40Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.54,
+            "trumpd": 0.449
+        },
+        "votes": 3556561,
+        "eevp": 60,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:28:47Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.539,
+            "trumpd": 0.449
+        },
+        "votes": 3659190,
+        "eevp": 62,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:29:09Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.539,
+            "trumpd": 0.449
+        },
+        "votes": 3659255,
+        "eevp": 62,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:29:47Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.531,
+            "trumpd": 0.458
+        },
+        "votes": 3861173,
+        "eevp": 65,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:32:13Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.531,
+            "trumpd": 0.458
+        },
+        "votes": 3861199,
+        "eevp": 65,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:33:45Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.53,
+            "trumpd": 0.459
+        },
+        "votes": 3912908,
+        "eevp": 66,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:35:13Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.528,
+            "trumpd": 0.461
+        },
+        "votes": 3932585,
+        "eevp": 66,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:38:11Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.528,
+            "trumpd": 0.461
+        },
+        "votes": 3932957,
+        "eevp": 66,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:38:29Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.528,
+            "trumpd": 0.461
+        },
+        "votes": 3934623,
+        "eevp": 66,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:39:32Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.528,
+            "trumpd": 0.461
+        },
+        "votes": 3934670,
+        "eevp": 66,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:40:24Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.526,
+            "trumpd": 0.463
+        },
+        "votes": 3985448,
+        "eevp": 67,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:41:13Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.526,
+            "trumpd": 0.463
+        },
+        "votes": 3985506,
+        "eevp": 67,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:43:23Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.525,
+            "trumpd": 0.464
+        },
+        "votes": 4005782,
+        "eevp": 68,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:44:13Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.524,
+            "trumpd": 0.465
+        },
+        "votes": 4020983,
+        "eevp": 68,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:45:19Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.524,
+            "trumpd": 0.465
+        },
+        "votes": 4021020,
+        "eevp": 68,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:46:13Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.521,
+            "trumpd": 0.468
+        },
+        "votes": 4128066,
+        "eevp": 70,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:48:15Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.519,
+            "trumpd": 0.47
+        },
+        "votes": 4258113,
+        "eevp": 72,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:52:20Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.517,
+            "trumpd": 0.472
+        },
+        "votes": 4309844,
+        "eevp": 73,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:55:15Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.517,
+            "trumpd": 0.472
+        },
+        "votes": 4309980,
+        "eevp": 73,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:56:55Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.517,
+            "trumpd": 0.472
+        },
+        "votes": 4309993,
+        "eevp": 73,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:58:14Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.514,
+            "trumpd": 0.475
+        },
+        "votes": 4359496,
+        "eevp": 74,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T01:59:09Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.511,
+            "trumpd": 0.477
+        },
+        "votes": 4432053,
+        "eevp": 75,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:02:28Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.511,
+            "trumpd": 0.477
+        },
+        "votes": 4432086,
+        "eevp": 75,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:04:27Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.51,
+            "trumpd": 0.479
+        },
+        "votes": 4537247,
+        "eevp": 77,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:06:18Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.51,
+            "trumpd": 0.479
+        },
+        "votes": 4537318,
+        "eevp": 77,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:07:07Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.51,
+            "trumpd": 0.479
+        },
+        "votes": 4539788,
+        "eevp": 77,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:08:40Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.51,
+            "trumpd": 0.479
+        },
+        "votes": 4539820,
+        "eevp": 77,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:10:12Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.509,
+            "trumpd": 0.479
+        },
+        "votes": 4545234,
+        "eevp": 77,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:11:06Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.508,
+            "trumpd": 0.481
+        },
+        "votes": 4606049,
+        "eevp": 78,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:11:16Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.507,
+            "trumpd": 0.482
+        },
+        "votes": 4635206,
+        "eevp": 78,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:15:15Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.507,
+            "trumpd": 0.482
+        },
+        "votes": 4635214,
+        "eevp": 78,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:15:52Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.506,
+            "trumpd": 0.482
+        },
+        "votes": 4641872,
+        "eevp": 78,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:17:18Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.505,
+            "trumpd": 0.484
+        },
+        "votes": 4691754,
+        "eevp": 79,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:20:17Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.505,
+            "trumpd": 0.484
+        },
+        "votes": 4691790,
+        "eevp": 79,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:22:06Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.505,
+            "trumpd": 0.484
+        },
+        "votes": 4691876,
+        "eevp": 79,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:22:30Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.485
+        },
+        "votes": 4738753,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:25:54Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.485
+        },
+        "votes": 4738853,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:26:55Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.485
+        },
+        "votes": 4738857,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:30:09Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.485
+        },
+        "votes": 4741590,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:34:43Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.485
+        },
+        "votes": 4741994,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:39:53Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.486
+        },
+        "votes": 4752770,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:43:14Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.503,
+            "trumpd": 0.486
+        },
+        "votes": 4753760,
+        "eevp": 80,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:45:24Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.501,
+            "trumpd": 0.487
+        },
+        "votes": 4837823,
+        "eevp": 82,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:47:45Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.501,
+            "trumpd": 0.487
+        },
+        "votes": 4851803,
+        "eevp": 82,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:47:49Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.497,
+            "trumpd": 0.491
+        },
+        "votes": 4988236,
+        "eevp": 84,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T02:52:27Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.495,
+            "trumpd": 0.493
+        },
+        "votes": 5066097,
+        "eevp": 85,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:01:54Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.495,
+            "trumpd": 0.493
+        },
+        "votes": 5066400,
+        "eevp": 85,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:02:16Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.495,
+            "trumpd": 0.493
+        },
+        "votes": 5066628,
+        "eevp": 85,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:03:49Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.494,
+            "trumpd": 0.494
+        },
+        "votes": 5103255,
+        "eevp": 86,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:05:27Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.494,
+            "trumpd": 0.494
+        },
+        "votes": 5104878,
+        "eevp": 86,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:05:34Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.494,
+            "trumpd": 0.494
+        },
+        "votes": 5104996,
+        "eevp": 86,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:06:37Z"
+    },
+    {
+        "vote_shares": {
+            "bidenj": 0.494,
+            "trumpd": 0.494
+        },
+        "votes": 5105075,
+        "eevp": 86,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:06:59Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.496,
+            "bidenj": 0.492
+        },
+        "votes": 5223314,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:08:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.496,
+            "bidenj": 0.492
+        },
+        "votes": 5223393,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:12:41Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.496,
+            "bidenj": 0.492
+        },
+        "votes": 5224577,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:13:45Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.497,
+            "bidenj": 0.491
+        },
+        "votes": 5228122,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:18:00Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.497,
+            "bidenj": 0.491
+        },
+        "votes": 5228124,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:18:07Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.497,
+            "bidenj": 0.491
+        },
+        "votes": 5247887,
+        "eevp": 88,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:18:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.497,
+            "bidenj": 0.491
+        },
+        "votes": 5250006,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:19:35Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.497,
+            "bidenj": 0.491
+        },
+        "votes": 5253328,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:20:31Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.498,
+            "bidenj": 0.49
+        },
+        "votes": 5269468,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:22:58Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.498,
+            "bidenj": 0.49
+        },
+        "votes": 5269577,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:24:37Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.498,
+            "bidenj": 0.49
+        },
+        "votes": 5288465,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:28:28Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.498,
+            "bidenj": 0.49
+        },
+        "votes": 5288820,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:30:19Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.498,
+            "bidenj": 0.49
+        },
+        "votes": 5288871,
+        "eevp": 89,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:30:24Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.489
+        },
+        "votes": 5328038,
+        "eevp": 93,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:39:15Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.488
+        },
+        "votes": 5339793,
+        "eevp": 93,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:44:48Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.488
+        },
+        "votes": 5339800,
+        "eevp": 93,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:50:45Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.488
+        },
+        "votes": 5362898,
+        "eevp": 93,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:52:00Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.488
+        },
+        "votes": 5362922,
+        "eevp": 93,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:56:24Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5392619,
+        "eevp": 94,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T03:56:43Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5434249,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:00:40Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5434341,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:02:07Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5436283,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:05:12Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5436365,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:05:33Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5436694,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:06:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5436703,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:07:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5437110,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:09:17Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5437255,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:11:30Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5437302,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:14:48Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5439236,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:15:46Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5439366,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:20:25Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5440053,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:22:18Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5443408,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:27:59Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5443475,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:28:29Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5443986,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:30:02Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5444203,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:30:24Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5453691,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:32:36Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5455617,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T04:36:40Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5456589,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T05:08:23Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457095,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T05:40:38Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457147,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T06:19:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457219,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T06:24:41Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457253,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T06:29:52Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457297,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T06:48:55Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457368,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T06:54:34Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5457588,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-04T21:40:09Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5459577,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-05T16:45:12Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5461810,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-05T18:02:18Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5462200,
+        "eevp": 95,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-06T20:59:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5462200,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-06T22:34:32Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5462512,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-06T22:59:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5462629,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-06T23:23:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5462930,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-07T00:26:52Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5463112,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-07T01:36:49Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5463885,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-07T19:32:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5464084,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-07T23:47:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5464097,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T13:50:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5464196,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T17:06:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5464802,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T20:11:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5464953,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T21:47:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5464972,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T21:54:41Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5465384,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-09T23:48:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5465474,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-10T01:11:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5465691,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-10T01:15:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5465773,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-10T18:32:23Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5465847,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-10T18:35:22Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5471602,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-11T17:10:27Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5471891,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-11T17:16:47Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5472241,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-11T17:21:43Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5474442,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-11T17:33:12Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475348,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T16:42:57Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475475,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T16:45:09Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475479,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:00:49Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475579,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:04:13Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475568,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:05:19Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475590,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:14:52Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475624,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:17:19Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475713,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:20:09Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475677,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:20:39Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5475719,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T17:26:10Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5476283,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:00:29Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5476588,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:02:46Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5476821,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:05:00Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5476952,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:06:31Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5476982,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:08:05Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5478398,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-12T23:13:08Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5480319,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:39:26Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5483003,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:43:21Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5483604,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:45:31Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5483753,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:50:09Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5484334,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:51:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5484469,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:53:55Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5484590,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:55:46Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5485574,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T00:57:17Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5485822,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T01:02:12Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5486258,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T01:53:58Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5486829,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T01:55:11Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5487481,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T01:58:01Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5487927,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T01:58:47Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5488341,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T02:04:56Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5490207,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T02:35:38Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5490446,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T02:36:56Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5493233,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T02:50:07Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.487
+        },
+        "votes": 5494776,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T13:14:14Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5495112,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T13:16:08Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5495517,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T14:42:52Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5495565,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T15:26:06Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5495021,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T15:29:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5495020,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:02:10Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.487
+        },
+        "votes": 5497033,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:06:42Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5497623,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:09:04Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5497866,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:11:00Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5497948,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:11:43Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5498042,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:15:15Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5498060,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:16:03Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.487
+        },
+        "votes": 5498057,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:36:53Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5501595,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:38:16Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5503941,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:41:18Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504166,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:42:45Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504277,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:45:00Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504276,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:46:45Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504943,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:47:42Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504949,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:50:33Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504950,
+        "eevp": 98,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T16:53:20Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5504950,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:20:08Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5505515,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:26:50Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5506438,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:28:52Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5506618,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:37:23Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5507002,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:38:34Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5507250,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:41:20Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5507284,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:43:24Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5507305,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:45:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5508011,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:47:56Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509159,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:55:02Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509476,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:57:40Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509535,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T17:59:29Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509508,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:02:15Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509725,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:03:26Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5509724,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:06:11Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5510024,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:17:41Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5510543,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:20:17Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5510634,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:20:49Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5511062,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T18:32:35Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5511867,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T19:05:30Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5511863,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T19:13:20Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5511851,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T19:14:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5513252,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T20:02:14Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5513240,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-13T20:03:04Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5514232,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:12:43Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5514946,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:14:17Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5515354,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:16:45Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.5,
+            "bidenj": 0.486
+        },
+        "votes": 5518639,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:18:03Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5519051,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:19:46Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5519092,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:24:07Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5519189,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:26:10Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5519527,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:28:02Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520076,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:29:53Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520585,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:31:08Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520737,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:32:24Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520831,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:40:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520753,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:41:48Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520847,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T15:48:30Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5520975,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:11:58Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5521335,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:13:58Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5521457,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:15:49Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5521918,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:17:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5522034,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:19:42Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5522397,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:21:39Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5522582,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:23:44Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5522618,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-15T16:24:25Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5522613,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T03:24:51Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524550,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T03:27:56Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524553,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T03:28:43Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5523887,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T03:31:47Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5523888,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T20:13:29Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524691,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T20:14:37Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524692,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-17T20:16:31Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524813,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-18T03:01:57Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5511499,
+        "eevp": 99,
+        "eevp_source": "ap",
+        "timestamp": "2020-11-19T14:05:26.957Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524813,
+        "eevp": 99,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-18T17:17:03Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.501,
+            "bidenj": 0.487
+        },
+        "votes": 5511489,
+        "eevp": 99,
+        "eevp_source": "ap",
+        "timestamp": "2020-11-25T04:00:59.09Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524801,
+        "eevp": 100,
+        "eevp_source": "edison",
+        "timestamp": "2020-11-27T15:34:30Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524802,
+        "eevp": 100,
+        "eevp_source": "edison",
+        "timestamp": "2021-01-08T18:05:28Z"
+    },
+    {
+        "vote_shares": {
+            "trumpd": 0.499,
+            "bidenj": 0.486
+        },
+        "votes": 5524804,
+        "eevp": 100,
+        "eevp_source": "edison",
+        "timestamp": "2021-03-07T21:15:21Z"
+    }
+]
