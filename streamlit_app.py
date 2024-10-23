@@ -3,6 +3,7 @@ import pandas as pd
 import datetime
 import math
 from pathlib import Path
+import pytz
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
@@ -79,13 +80,24 @@ d = st.date_input("The current date is", datetime.date(2020, 11, 4))
 st.write("Now showing the state on:", d)
 
 
-dt = pd.to_datetime(d+t)
+dt = datetime.datetime.combine(d, t)
+
+timezone = pytz.timezone('Europe/London')
+dt = timezone.localize(dt) 
 print (dt)
 
-NC_df = NC_df.set_index('full_time')
-nearest = NC_df.index.get_loc(dt, method='nearest')
 
-st.write("The state is:", nearest)
+
+NC_df = NC_df.set_index('full_time')
+NC_df.sort_index(inplace=True)
+
+iloc_idx = NC_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+loc_idx = NC_df.index[iloc_idx]                             # if you want named index
+
+my_val = NC_df.iloc[iloc_idx]
+my_val = NC_df.loc[loc_idx]    
+
+st.write("The state is:", my_val)
 
 # Filter the data
 filtered_NC_df = NC_df[
@@ -99,7 +111,7 @@ st.header('Eday Returns', divider='gray')
 
 st.line_chart(
     filtered_NC_df,
-    x='full_time',
+    x='timestamp',
     y='bidenj',
 )
 
