@@ -55,6 +55,11 @@ def get_json_data(state_ref):
 
     return state_df
 
+PA_liveblog = pd.read_csv("data/PA_extract.csv")
+
+PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce")
+
+
 
 
 # -----------------------------------------------------------------------------
@@ -157,4 +162,4 @@ plot_raw_data()
 
 ''
 
-cols = st.columns(4)
+
