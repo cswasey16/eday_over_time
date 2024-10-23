@@ -17,7 +17,7 @@ st.set_page_config(
 # Declare some useful functions.
 
 @st.cache_data
-def get_json_data():
+def get_json_data(state_ref):
     """Grab GDP data from a CSV file.
 
     This uses caching to avoid having to read the file every time. If we were
@@ -26,11 +26,12 @@ def get_json_data():
     """
 
     # Instead of a CSV on disk, you could read from an HTTP endpoint here too.
-    DATA_FILENAME = Path(__file__).parent/'data/NC_2020.json'
-    NC_df = pd.read_json(DATA_FILENAME)
+    state_file_name = "data/" + state_ref + "_2020.json"
+    DATA_FILENAME = Path(__file__).parent/state_file_name
+    state_df = pd.read_json(DATA_FILENAME)
 
-    NC_df = NC_df.join(
-        pd.json_normalize(NC_df['vote_shares'])
+    state_df = state_df.join(
+        pd.json_normalize(state_df['vote_shares'])
     ).drop('vote_shares', axis=1)
 
 
@@ -47,21 +48,21 @@ def get_json_data():
 
 
     # Convert years from string to integers
-    NC_df['time'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
-    NC_df['date'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
-    NC_df['full_time']= pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+    state_df['time'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
+    state_df['date'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
+    state_df['full_time']= pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
    
 
-    return NC_df
+    return state_df
 
-NC_df = get_json_data()
+state_df = get_json_data(state_ref = "NC")
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
 
 # Set the title that appears at the top of the page.
 '''
-# :earth_americas: How Votes Came In 2020
+# How Votes Came In During 2020 Eday
 DRAFT DRAFT JANKY JANKY
 
 Using checkpoints of election night data from NYT, graph how votes came in during the 2020 election
@@ -84,38 +85,50 @@ st.write("Now showing the state on:", d)
 
 dt = datetime.datetime.combine(d, t)
 
-timezone = pytz.timezone('America/New_York')
+timezone = pytz.timezone('UTC')
 dt = timezone.localize(dt) 
 print (dt)
 
 
 
-NC_df = NC_df.set_index('full_time')
-NC_df.sort_index(inplace=True)
+state_df = state_df.set_index('full_time')
+state_df.sort_index(inplace=True)
 
-iloc_idx = NC_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
-loc_idx = NC_df.index[iloc_idx]                             # if you want named index
+iloc_idx = state_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+loc_idx = state_df.index[iloc_idx]                             # if you want named index
 
-my_val = NC_df.iloc[iloc_idx]
-my_val = NC_df.loc[loc_idx]    
+my_val = state_df.loc[loc_idx]    
 
-st.write("The state is:", my_val)
+date_in = my_val['timestamp']
+votes_in = my_val['votes']
+eevp_in = str(my_val['eevp'])
+biden_in = str(my_val['bidenj'])
+
+st.write(my_val)
+
+st.write(str(votes_in[0]), " votes are currently counted")
+
+max_votes = state_df['votes'].max()
+curr_percent = round(votes_in[0] / max_votes, 3)
+
+st.write("This is", curr_percent, " out of the", max_votes, "votes that will eventually be counted")
+
 
 # Filter the data
-filtered_NC_df = NC_df[
-    (NC_df['date'] <= d) &
-    (NC_df['time'] <= t)
+filtered_state_df = state_df[
+    (state_df['date'] <= d) &
+    (state_df['time'] <= t)
 ]
 
 
 ''
 ''
-dat = NC_df
+dat = state_df
 def plot_raw_data():
     global fig
     fig = go.Figure()
-    fig.add_trace(go.Line(x=dat['timestamp'], y=dat['bidenj'], name='Biden'))
-    fig.add_trace(go.Line(x=dat['timestamp'], y=dat['trumpd'], name='Trump'))
+    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['bidenj'], name='Biden', mode='lines+markers'))
+    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['trumpd'], name='Trump', mode='lines+markers'))
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
@@ -126,6 +139,7 @@ def plot_raw_data():
         ),
         type="date"
     ))
+    fig.add_vline(x=date_in[0], line_color = "white")
     st.plotly_chart(fig, use_container_width=True)
 plot_raw_data()
 
