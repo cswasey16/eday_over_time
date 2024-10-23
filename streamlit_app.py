@@ -26,6 +26,12 @@ def get_json_data():
     DATA_FILENAME = Path(__file__).parent/'data/NC_2020.json'
     NC_df = pd.read_json(DATA_FILENAME)
 
+    NC_df = NC_df.join(
+        pd.json_normalize(NC_df['vote_shares'])
+    ).drop('vote_shares', axis=1)
+
+
+
 
     # The data above has columns like:
     # vote_shares
@@ -38,7 +44,10 @@ def get_json_data():
 
 
     # Convert years from string to integers
-    NC_df['Time'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+    NC_df['time'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+    NC_df['date'] = pd.to_datetime(NC_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
+
+   
 
     return NC_df
 
@@ -60,37 +69,20 @@ But it's otherwise a great (and did I mention _free_?) source of data.
 ''
 ''
 
-min_value = NC_df['Time'].min()
-max_value = NC_df['Time'].max()
 
 
-yearmin = NC_df['Time'].min().year
-monthmin = NC_df['Time'].min().month
-daymin = NC_df['Time'].min().day
-
-yearmax = NC_df['Time'].max().year
-monthmax = NC_df['Time'].max().month
-daymax = NC_df['Time'].max().day
+t = st.time_input("The current time is", value="now")
+st.write("Now showing the state at", t)
 
 
-PRE_SELECTED_DATES = (datetime.datetime(yearmin,monthmin,daymin), datetime.datetime(yearmax,monthmax,daymax ))
-min = datetime.datetime(yearmin,monthmin,daymin)
-max = datetime.datetime(yearmax,monthmax,daymax)
+d = st.date_input("The current date is", datetime.date(2020, 11, 4))
+st.write("Now showing the state on:", d)
 
-from_year, to_year = st.slider(
-    'Which times are you interested in?',
-    min_value=min,
-    max_value=max,
-    value=PRE_SELECTED_DATES)
 
-''
-''
-''
 
 # Filter the data
 filtered_NC_df = NC_df[
-    (NC_df['Time'] <= to_year)
-    & (from_year <= NC_df['Time'])
+    (NC_df['date'] <= d)
 ]
 
 st.header('Eday Returns', divider='gray')
@@ -99,18 +91,15 @@ st.header('Eday Returns', divider='gray')
 
 st.line_chart(
     filtered_NC_df,
-    x='Time',
-    y='Votes',
+    x='time',
+    y='bidenj',
 )
 
 ''
 ''
 
 
-first_year = NC_df[NC_df['Time'] == from_year]
-last_year = NC_df[NC_df['Time'] == to_year]
-
-st.header(f'GDP in {to_year}', divider='gray')
+st.header(f'Vote status on {d}', divider='gray')
 
 ''
 
