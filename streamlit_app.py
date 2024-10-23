@@ -62,11 +62,10 @@ def get_json_data(state_ref):
 
 # Set the title that appears at the top of the page.
 '''
-# How Votes Came In During 2020 Eday
-DRAFT DRAFT JANKY JANKY
+# 2020 Election Night Throwback Tool
+Do you remember where we were at at this point on election night 2020? This tool does.
 
-Using checkpoints of election night data from NYT, graph how votes came in during the 2020 election
-Compare where it was to your current point in time
+Using checkpoints of election night data from NYT, this graphs how votes came in during the 2020 election so you can remember what we actually knew at any point in time.
 '''
 
 
@@ -78,22 +77,21 @@ state_df = get_json_data(state_ref = option)
 # Add some spacing
 ''
 ''
+st.write("Let's remember when it was..")
+
+left, middle = st.columns(2, vertical_alignment="bottom")
+
+t = middle.time_input("Time", value = datetime.time(8, 45))
+d = left.date_input("Date", datetime.date(2020, 11, 4))
 
 
+st.write("Now showing the state at", d, t)
 
-t = st.time_input("The current time is", value = datetime.time(8, 45))
-st.write("Now showing the state at", t)
 ''
 ''
-
-d = st.date_input("The current date is", datetime.date(2020, 11, 4))
-st.write("Now showing the state on:", d)
-
-
-dt = datetime.datetime.combine(d, t)
-
+dt_orig = datetime.datetime.combine(d, t)
 timezone = pytz.timezone('UTC')
-dt = timezone.localize(dt) 
+dt = timezone.localize(dt_orig) 
 print (dt)
 
 
@@ -108,17 +106,15 @@ my_val = state_df.loc[loc_idx]
 
 date_in = my_val['timestamp']
 votes_in = my_val['votes']
-eevp_in = str(my_val['eevp'])
-biden_in = str(my_val['bidenj'])
+eevp_in = my_val['eevp']
+biden_in = my_val['bidenj']
 biden_hold = my_val['bidenj']
-st.write(my_val)
-
-st.write(str(votes_in[0]), " votes are currently counted")
-
 max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
-st.write("This is", curr_percent, " out of the", max_votes, "votes that will eventually be counted in", option)
+st.write("The last update was given at", date_in[0])
+st.write(str(votes_in[0]), " votes are currently counted")
+st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
 
 
 # Filter the data
@@ -135,7 +131,7 @@ def plot_raw_data():
     global fig
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['bidenj'], name='Biden', mode='lines+markers'))
-    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['trumpd'], name='Trump', mode='lines+markers'))
+    fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['trumpd'], name='Trump', mode='lines+markers', line=dict(color="#FF0000")))
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
