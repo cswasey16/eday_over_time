@@ -55,7 +55,7 @@ def get_json_data(state_ref):
 
     return state_df
 
-state_df = get_json_data(state_ref = "NC")
+
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
@@ -69,6 +69,12 @@ Using checkpoints of election night data from NYT, graph how votes came in durin
 Compare where it was to your current point in time
 '''
 
+
+option = st.selectbox(
+  'Which state would you like to see?',
+    ('NC', 'PA'))
+
+state_df = get_json_data(state_ref = option)
 # Add some spacing
 ''
 ''
@@ -77,7 +83,8 @@ Compare where it was to your current point in time
 
 t = st.time_input("The current time is", value = datetime.time(8, 45))
 st.write("Now showing the state at", t)
-
+''
+''
 
 d = st.date_input("The current date is", datetime.date(2020, 11, 4))
 st.write("Now showing the state on:", d)
@@ -111,7 +118,7 @@ st.write(str(votes_in[0]), " votes are currently counted")
 max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
-st.write("This is", curr_percent, " out of the", max_votes, "votes that will eventually be counted")
+st.write("This is", curr_percent, " out of the", max_votes, "votes that will eventually be counted in", option)
 
 
 # Filter the data
