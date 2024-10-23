@@ -110,18 +110,22 @@ filtered_NC_df = NC_df[
 
 ''
 ''
-dat = filtered_NC_df
+dat = NC_df
 def plot_raw_data():
     global fig
     fig = go.Figure()
     fig.add_trace(go.Line(x=dat['timestamp'], y=dat['bidenj'], name='Biden'))
     fig.add_trace(go.Line(x=dat['timestamp'], y=dat['trumpd'], name='Trump'))
     fig.layout.update(title_text="Ballot Flow", 
-            xaxis=dict(
-                rangeslider=dict(
-                    visible = True),
-                type="date"
-            ))
+                xaxis=dict(
+        autorange=False,
+        range=["2020-11-3 18:36:37.3129", "2020-11-10 05:23:22.6871"],
+        rangeslider=dict(
+            autorange=False,
+            range=["2020-11-3 18:36:37.3129", "2020-11-10 05:23:22.6871"]
+        ),
+        type="date"
+    ))
     st.plotly_chart(fig, use_container_width=True)
 plot_raw_data()
 
