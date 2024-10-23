@@ -4,6 +4,8 @@ import datetime
 import math
 from pathlib import Path
 import pytz
+import plotly
+from plotly import graph_objs as go
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
@@ -105,23 +107,25 @@ filtered_NC_df = NC_df[
     (NC_df['time'] <= t)
 ]
 
-st.header('Eday Returns', divider='gray')
-
-''
-
-st.line_chart(
-    filtered_NC_df,
-    x='timestamp',
-    y=['bidenj', 'trumpd'],
-    y_label= 'Vote Share',
-    x_label = 'DateTime'
-)
 
 ''
 ''
+dat = filtered_NC_df
+def plot_raw_data():
+    global fig
+    fig = go.Figure()
+    fig.add_trace(go.Line(x=dat['timestamp'], y=dat['bidenj'], name='Biden'))
+    fig.add_trace(go.Line(x=dat['timestamp'], y=dat['trumpd'], name='Trump'))
+    fig.layout.update(title_text="Ballot Flow", 
+            xaxis=dict(
+                rangeslider=dict(
+                    visible = True),
+                type="date"
+            ))
+    st.plotly_chart(fig, use_container_width=True)
+plot_raw_data()
 
 
-st.header(f'Vote status on {d}', divider='gray')
 
 ''
 
