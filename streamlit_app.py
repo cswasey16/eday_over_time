@@ -111,7 +111,20 @@ state_df.sort_index(inplace=True)
 iloc_idx = state_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
 
-my_val = state_df.loc[loc_idx]    
+my_val = state_df.loc[loc_idx]   
+
+
+PA_liveblog = PA_liveblog.set_index('convert_date')
+PA_liveblog = PA_liveblog.loc[PA_liveblog.index.notnull()]
+PA_liveblog.sort_index(inplace=True)
+
+
+
+iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
+
+liveblog_val = PA_liveblog.loc[loc_idx]  
+
 
 date_in = my_val['timestamp']
 votes_in = my_val['votes']
@@ -121,14 +134,6 @@ biden_hold = my_val['bidenj']
 max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
-##PA_liveblog = PA_liveblog.set_index('convert_date')
-##PA_liveblog.sort_index(inplace=True)
-##print(PA_liveblog.head())
-
-##iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
-##loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
-
-##liveblog_val = PA_liveblog.loc[loc_idx]  
 
 
 
@@ -137,7 +142,8 @@ st.write(str(votes_in[0]), " votes are currently counted")
 st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
 
 
-##st.write(liveblog_val)
+st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
+
 # Filter the data
 filtered_state_df = state_df[
     (state_df['date'] <= d) &
