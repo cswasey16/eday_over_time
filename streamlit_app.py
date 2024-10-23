@@ -63,6 +63,10 @@ def get_json_data(state_ref):
 # Set the title that appears at the top of the page.
 '''
 # 2020 Election Night Throwback Tool
+
+NOTE THE TIME ZONES ARE WEIRD
+I"M WORKING ON IT
+
 Do you remember where we were at at this point on election night 2020? This tool does.
 
 Using checkpoints of election night data from NYT, this graphs how votes came in during the 2020 election so you can remember what we actually knew at any point in time.
