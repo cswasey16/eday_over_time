@@ -103,7 +103,7 @@ date_in = my_val['timestamp']
 votes_in = my_val['votes']
 eevp_in = str(my_val['eevp'])
 biden_in = str(my_val['bidenj'])
-
+biden_hold = my_val['bidenj']
 st.write(my_val)
 
 st.write(str(votes_in[0]), " votes are currently counted")
@@ -132,14 +132,17 @@ def plot_raw_data():
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 18:36:37.3129", "2020-11-10 05:23:22.6871"],
+        range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"],
         rangeslider=dict(
             autorange=False,
-            range=["2020-11-3 18:36:37.3129", "2020-11-10 05:23:22.6871"]
+            range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"]
         ),
         type="date"
     ))
-    fig.add_vline(x=date_in[0], line_color = "white")
+    fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
+    fig.add_annotation(x=date_in[0], y=(biden_hold[0] + .2),
+            text="You Are Here",
+            showarrow=True)
     st.plotly_chart(fig, use_container_width=True)
 plot_raw_data()
 
