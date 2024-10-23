@@ -112,7 +112,9 @@ st.header('Eday Returns', divider='gray')
 st.line_chart(
     filtered_NC_df,
     x='timestamp',
-    y='bidenj',
+    y=['bidenj', 'trumpd'],
+    y_label= 'Vote Share',
+    x_label = 'DateTime'
 )
 
 ''
