@@ -59,11 +59,11 @@ NC_df = get_json_data()
 
 # Set the title that appears at the top of the page.
 '''
-# :earth_americas: GDP dashboard
+# :earth_americas: How Votes Came In 2020
+DRAFT DRAFT JANKY JANKY
 
-Browse GDP data from the [World Bank Open Data](https://data.worldbank.org/) website. As you'll
-notice, the data only goes to 2022 right now, and datapoints for certain years are often missing.
-But it's otherwise a great (and did I mention _free_?) source of data.
+Using checkpoints of election night data from NYT, graph how votes came in during the 2020 election
+Compare where it was to your current point in time
 '''
 
 # Add some spacing
@@ -82,7 +82,7 @@ st.write("Now showing the state on:", d)
 
 dt = datetime.datetime.combine(d, t)
 
-timezone = pytz.timezone('Europe/London')
+timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt) 
 print (dt)
 
