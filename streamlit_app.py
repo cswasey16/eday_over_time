@@ -36,6 +36,9 @@ def get_json_data(state_ref):
         pd.json_normalize(state_df['vote_shares'])
     ).drop('vote_shares', axis=1)
 
+    duplicate_index_values = state_df.index[state_df.index.duplicated()]
+    print(duplicate_index_values)
+
     # Convert years from string to integers
     state_df['timestamp'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.tz_convert('US/Eastern')
     state_df['time'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
@@ -64,10 +67,10 @@ def plot_raw_data():
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 18:00:00", "2020-11-4 21:23:22.6871"],
+        range=["2020-11-3 01:00:00", "2020-11-10 21:23:22.6871"],
         rangeslider=dict(
             autorange=False,
-            range=["2020-11-3 18:00:00", "2020-11-4 21:23:22.6871"]
+            range=["2020-11-3 01:00:00", "2020-11-10 21:23:22.6871"]
         ),
         type="date"
     ))
@@ -101,7 +104,7 @@ st.write("Let's remember when it was..")
 left, middle, right = st.columns(3, vertical_alignment="bottom")
 option = left.selectbox(
   'Which state would you like to see?',
-    ('NC', 'PA'))
+    ('AZ', 'GA', 'MI', 'NC', 'PA','WI'))
 t = right.time_input("Time (ET)", value = datetime.time(8, 45))
 d = middle.date_input("Date", datetime.date(2020, 11, 3))
 
@@ -115,9 +118,13 @@ timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt_orig) 
 
 
+
 state_df = state_df.set_index('full_time')
 state_df.sort_index(inplace=True)
-iloc_idx = state_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+
+
+
+iloc_idx = state_df.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
 my_val = state_df.loc[loc_idx]   
 
@@ -126,7 +133,7 @@ PA_liveblog = read_liveblog_data()
 PA_liveblog = PA_liveblog.set_index('convert_date')
 PA_liveblog = PA_liveblog.loc[PA_liveblog.index.notnull()]
 PA_liveblog.sort_index(inplace=True)
-iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
+iloc_idx = PA_liveblog.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
 loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
 
 liveblog_val = PA_liveblog.loc[loc_idx]  
