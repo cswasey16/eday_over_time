@@ -41,8 +41,18 @@ def get_json_data(state_ref):
     state_df['date'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
     state_df['full_time']= pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
    
+    # convert vote share into categoricals for ease
+    state_df['biden_2way'] = state_df['bidenj']/(state_df['bidenj']+state_df['trumpd'])
+    state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49, .5, .51, .55 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
 
     return state_df
+
+@st.cache_data
+def read_liveblog_data():
+    PA_liveblog = pd.read_csv("data/PA_extract.csv")
+    PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True)
+
+    return PA_liveblog
 
 def plot_raw_data():
     global fig
@@ -64,10 +74,6 @@ def plot_raw_data():
             text="You Are Here",
             showarrow=True)
     st.plotly_chart(fig, use_container_width=True)
-
-PA_liveblog = pd.read_csv("data/PA_extract.csv")
-
-PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True)
 
 
 
@@ -111,16 +117,14 @@ dt = timezone.localize(dt_orig)
 
 state_df = state_df.set_index('full_time')
 state_df.sort_index(inplace=True)
-
 iloc_idx = state_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
-
 my_val = state_df.loc[loc_idx]   
 
+PA_liveblog = read_liveblog_data()
 PA_liveblog = PA_liveblog.set_index('convert_date')
 PA_liveblog = PA_liveblog.loc[PA_liveblog.index.notnull()]
 PA_liveblog.sort_index(inplace=True)
-
 iloc_idx = PA_liveblog.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
 loc_idx = PA_liveblog.index[iloc_idx]                             # if you want named index
 
@@ -132,6 +136,7 @@ votes_in = my_val['votes']
 eevp_in = my_val['eevp']
 biden_in = my_val['bidenj']
 biden_hold = my_val['bidenj']
+status = my_val['closeness'][0]
 max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
@@ -148,7 +153,7 @@ col1, col2 = st.columns([0.7, 0.3])
 with col1:
     plot_raw_data()
 with col2:
-    st.write("The last update was given at", date_in[0])
+    st.write("The last update was given at", date_in[0], "and current there is a", status)
     st.write(str(votes_in[0]), " votes are currently counted")
     st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
     st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
