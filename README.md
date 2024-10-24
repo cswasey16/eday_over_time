@@ -1,6 +1,6 @@
-# :earth_americas: GDP dashboard template
+# Election Night Throwback Tool
 
-A simple Streamlit app showing the GDP of different countries in the world.
+Helps you remember what the state of vote counting was at this point in 2020
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
 
