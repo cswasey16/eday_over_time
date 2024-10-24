@@ -36,8 +36,7 @@ def get_json_data(state_ref):
         pd.json_normalize(state_df['vote_shares'])
     ).drop('vote_shares', axis=1)
 
-    duplicate_index_values = state_df.index[state_df.index.duplicated()]
-    print(duplicate_index_values)
+
 
     # Convert years from string to integers
     state_df['timestamp'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.tz_convert('US/Eastern')
@@ -49,8 +48,13 @@ def get_json_data(state_ref):
     # convert vote share into categoricals for ease
     state_df['biden_2way'] = state_df['bidenj']/(state_df['bidenj']+state_df['trumpd'])
     state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49,  .51, .55, 1 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
+    
 
-    return state_df
+    state_df = state_df.set_index('full_time')
+    state_df.sort_index(inplace=True)
+    state_df_update = state_df.reset_index().drop_duplicates(subset='full_time', keep='last').set_index('full_time')
+ 
+    return state_df_update
 
 @st.cache_data
 def read_liveblog_data():
@@ -118,12 +122,6 @@ timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt_orig) 
 
 
-
-state_df = state_df.set_index('full_time')
-state_df.sort_index(inplace=True)
-
-duplicate_index_values = state_df.index[state_df.index.duplicated()]
-st.write("this is broken because", duplicate_index_values)
 
 iloc_idx = state_df.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
