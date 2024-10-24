@@ -122,7 +122,8 @@ dt = timezone.localize(dt_orig)
 state_df = state_df.set_index('full_time')
 state_df.sort_index(inplace=True)
 
-
+duplicate_index_values = state_df.index[state_df.index.duplicated()]
+st.write("this is broken because", duplicate_index_values)
 
 iloc_idx = state_df.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
