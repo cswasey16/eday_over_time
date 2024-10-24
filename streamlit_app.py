@@ -37,20 +37,22 @@ def get_json_data(state_ref):
     ).drop('vote_shares', axis=1)
 
     # Convert years from string to integers
+    state_df['timestamp'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.tz_convert('US/Eastern')
     state_df['time'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
     state_df['date'] = pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
-    state_df['full_time']= pd.to_datetime(state_df['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+    state_df['full_time'] = state_df['timestamp']
    
+
     # convert vote share into categoricals for ease
     state_df['biden_2way'] = state_df['bidenj']/(state_df['bidenj']+state_df['trumpd'])
-    state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49, .5, .51, .55 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
+    state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49,  .51, .55, 1 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
 
     return state_df
 
 @st.cache_data
 def read_liveblog_data():
     PA_liveblog = pd.read_csv("data/PA_extract.csv")
-    PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True)
+    PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True).dt.tz_convert('US/Eastern')
 
     return PA_liveblog
 
@@ -62,10 +64,10 @@ def plot_raw_data():
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"],
+        range=["2020-11-3 18:00:00", "2020-11-4 21:23:22.6871"],
         rangeslider=dict(
             autorange=False,
-            range=["2020-11-3 18:36:37.3129", "2020-11-5 05:23:22.6871"]
+            range=["2020-11-3 18:00:00", "2020-11-4 21:23:22.6871"]
         ),
         type="date"
     ))
@@ -85,9 +87,6 @@ def plot_raw_data():
 '''
 # 2020 Election Night Throwback Tool
 
-NOTE THE TIME ZONES ARE WEIRD
-I"M WORKING ON IT
-
 Do you remember where we were at at this point on election night 2020? This tool does.
 
 Using checkpoints of election night data from NYT, this graphs how votes came in during the 2020 election so you can remember what we actually knew at any point in time.
@@ -103,15 +102,16 @@ left, middle, right = st.columns(3, vertical_alignment="bottom")
 option = left.selectbox(
   'Which state would you like to see?',
     ('NC', 'PA'))
-t = right.time_input("Time", value = datetime.time(8, 45))
-d = middle.date_input("Date", datetime.date(2020, 11, 4))
+t = right.time_input("Time (ET)", value = datetime.time(8, 45))
+d = middle.date_input("Date", datetime.date(2020, 11, 3))
 
 
 state_df = get_json_data(state_ref = option)
+
 st.write("Now showing the state at", d, t)
 
 dt_orig = datetime.datetime.combine(d, t)
-timezone = pytz.timezone('UTC')
+timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt_orig) 
 
 
@@ -120,6 +120,7 @@ state_df.sort_index(inplace=True)
 iloc_idx = state_df.index.get_indexer([dt], method='nearest')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
 my_val = state_df.loc[loc_idx]   
+
 
 PA_liveblog = read_liveblog_data()
 PA_liveblog = PA_liveblog.set_index('convert_date')
@@ -141,19 +142,12 @@ max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
 
-
-# Filter the data
-filtered_state_df = state_df[
-    (state_df['date'] <= d) &
-    (state_df['time'] <= t)
-]
-
 dat = state_df
 col1, col2 = st.columns([0.7, 0.3])
 with col1:
     plot_raw_data()
 with col2:
-    st.write("The last update was given at", date_in[0], "and current there is a", status)
+    st.write("The last update was given at", date_in[0], "and currently there is a", status)
     st.write(str(votes_in[0]), " votes are currently counted")
     st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
     st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
