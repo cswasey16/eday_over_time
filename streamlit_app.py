@@ -6,6 +6,9 @@ from pathlib import Path
 import pytz
 import plotly
 from plotly import graph_objs as go
+import markdown
+from bs4 import BeautifulSoup
+
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
@@ -17,6 +20,11 @@ st.set_page_config(
 
 # -----------------------------------------------------------------------------
 # Declare some useful functions.
+def strip_markdown(text):
+    html = markdown.markdown(text)
+    soup = BeautifulSoup(html, 'html.parser')
+    return soup.get_text()
+
 
 @st.cache_data
 def get_json_data(state_ref):
@@ -60,6 +68,8 @@ def get_json_data(state_ref):
 def read_liveblog_data():
     PA_liveblog = pd.read_csv("data/PA_extract.csv")
     PA_liveblog['convert_date'] = pd.to_datetime(PA_liveblog['date'], unit = 'ms', errors = "coerce", utc = True).dt.tz_convert('US/Eastern')
+
+    PA_liveblog['text_update'] = PA_liveblog['text_update'].apply(strip_markdown)
 
     return PA_liveblog
 
