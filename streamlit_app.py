@@ -107,22 +107,29 @@ Using checkpoints of election night data from NYT, this graphs how votes came in
 ''
 
 
-start_date = datetime.datetime(2020, 11, 3)
-end_date = start_date + datetime.timedelta(days=4)
- 
 
+ 
 
 left, right = st.columns([0.3, 0.7], vertical_alignment="top")
 option = left.selectbox(
   'Select State',
     ('AZ', 'GA', 'MI', 'NC', 'PA','WI'))
 
+start_date = datetime.datetime(2020, 11, 3)
+end_date = start_date + datetime.timedelta(days=4)
+
+current_time = pd.Timestamp.now()
+current_hour = current_time.to_pydatetime().hour
+current_time = start_date + pd.to_timedelta(current_hour, unit='h')
+
+
+
 left2, right2 = st.columns([0.7, 0.3], vertical_alignment="top")
 t = left2.slider(
     "Remember when it was...",
     min_value=start_date,
     max_value=end_date,
-    value=(start_date),
+    value=current_time,
     format="MMMM DD hhA",
     step=datetime.timedelta(hours=1),
 )
