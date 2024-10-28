@@ -79,7 +79,7 @@ def plot_raw_data(dat):
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 01:00:00", "2020-11-8 21:23:22.6871"],
+        range=["2020-11-3 01:00:00", "2020-11-6 21:23:22.6871"],
         type="date"
     ))
     fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
