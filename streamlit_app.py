@@ -40,9 +40,14 @@ def get_json_data(state_ref):
     DATA_FILENAME = Path(__file__).parent/state_file_name
     state_df = pd.read_json(DATA_FILENAME)
 
+    
+
     state_df = state_df.join(
         pd.json_normalize(state_df['vote_shares'])
     ).drop('vote_shares', axis=1)
+    # convert vote share into categoricals for ease
+    state_df['biden_2way'] = state_df['bidenj']/(state_df['bidenj']+state_df['trumpd'])
+    state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49,  .51, .55, 1 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
 
 
 
@@ -53,15 +58,15 @@ def get_json_data(state_ref):
     state_df['full_time'] = state_df['timestamp']
    
 
-    # convert vote share into categoricals for ease
-    state_df['biden_2way'] = state_df['bidenj']/(state_df['bidenj']+state_df['trumpd'])
-    state_df['closeness'] = pd.cut(state_df['biden_2way'], bins=[0, .45, .49,  .51, .55, 1 ], labels=['Trump Lead', 'Narrow Trump Lead', 'Tie', 'Narrow Biden Lead', 'Biden Lead'])
-    
 
+
+
+    #state_df = pd.concat([state_df, pd.DataFrame(nodat_list)], ignore_index=False)
+##ADD BEFORE-EVERYTHING DATA POINT WITH "NO DATA"
     state_df = state_df.set_index('full_time')
     state_df.sort_index(inplace=True)
     state_df_update = state_df.reset_index().drop_duplicates(subset='full_time', keep='last').set_index('full_time')
-    state_df_update.to_csv("data/Time_Converted_CSV.csv")
+
     return state_df_update
 
 @st.cache_data
@@ -93,7 +98,7 @@ def plot_raw_data(dat):
         type="date"
     ))
     fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
-
+    ### Add markings for polls close ET/PST/etc?
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -156,7 +161,7 @@ dt = timezone.localize(dt_orig)
 state_curr = filter_to_current(data = state_df, timestamp= dt)
 
 
-iloc_idx = state_df.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
+iloc_idx = state_df.index.get_indexer([dt], method='ffill')  # returns absolute index into df e.g. array([5])
 loc_idx = state_df.index[iloc_idx]                             # if you want named index
 my_val = state_df.loc[loc_idx]   
 
@@ -186,7 +191,7 @@ col1, col2 = st.columns([0.7, 0.3])
 with col1:
     plot_raw_data(state_curr)
 with col2:
-    st.write("The last update was given at", date_in[0], "and currently there is a", status)
+    st.write("The last update was given at", date_in[0].strftime("%I:%M%p"), "and currently there is a", status)
     st.write(str(votes_in[0]), " votes are currently counted")
     st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
     st.write("What did the NYT have to say right now? According to ", liveblog_val['author'][0], ":", liveblog_val['text_update'][0])
