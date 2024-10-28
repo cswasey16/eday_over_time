@@ -53,7 +53,7 @@ def get_json_data(state_ref):
     state_df = state_df.set_index('full_time')
     state_df.sort_index(inplace=True)
     state_df_update = state_df.reset_index().drop_duplicates(subset='full_time', keep='last').set_index('full_time')
- 
+    state_df_update.to_csv("data/Time_Converted_CSV.csv")
     return state_df_update
 
 @st.cache_data
@@ -103,21 +103,34 @@ Using checkpoints of election night data from NYT, this graphs how votes came in
 # Add some spacing
 ''
 ''
-st.write("Let's remember when it was..")
 
-left, middle, right = st.columns(3, vertical_alignment="bottom")
+
+start_date = datetime.datetime(2020, 11, 3)
+end_date = start_date + datetime.timedelta(days=4)
+ 
+
+
+left, right = st.columns([0.3, 0.7], vertical_alignment="top")
 option = left.selectbox(
-  'Which state would you like to see?',
+  'Select State',
     ('AZ', 'GA', 'MI', 'NC', 'PA','WI'))
-t = right.time_input("Time (ET)", value = datetime.time(8, 45))
-d = middle.date_input("Date", datetime.date(2020, 11, 3))
+
+left2, right2 = st.columns([0.7, 0.3], vertical_alignment="top")
+t = left2.slider(
+    "Remember when it was...",
+    min_value=start_date,
+    max_value=end_date,
+    value=(start_date),
+    format="MMMM DD hhA",
+    step=datetime.timedelta(hours=1),
+)
 
 
 state_df = get_json_data(state_ref = option)
 
-st.write("Now showing the state at", d, t)
+st.write("Now showing the state at", t)
 
-dt_orig = datetime.datetime.combine(d, t)
+dt_orig = t
 timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt_orig) 
 
