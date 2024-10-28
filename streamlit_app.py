@@ -110,7 +110,6 @@ def plot_raw_data(dat):
     ))
     polls_close_ET = timezone.localize(pd.to_datetime("2020-11-3 19:00:00")).timestamp() * 1000
     polls_close_PST = timezone.localize(pd.to_datetime("2020-11-3 23:00:00")).timestamp() * 1000
-    date_nov4 = timezone.localize(pd.to_datetime("2020-11-4 00:00:00")).timestamp() * 1000
 
     fig.add_vline(x=polls_close_ET, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>East Coast")
     fig.add_vline(x=polls_close_PST, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>West Coast")
@@ -119,8 +118,6 @@ def plot_raw_data(dat):
     ## tickformat="%-I %p",
     ##   dtick=7_200_000,
     ##))
-
-    fig.add_vline(x=polls_close_PST, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>West Coast")
 
     fig.add_vline(x=date_in, line_dash = "dash", line_color = "white")
     ### Add markings for polls close ET/PST/etc?
