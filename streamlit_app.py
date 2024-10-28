@@ -105,19 +105,23 @@ def plot_raw_data(dat):
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 05:00:00", "2020-11-4 21:23:22.6871"],
+        range=["2020-11-3 06:00:00", "2020-11-5 06:00:00.6871"],
         type="date"
     ))
     polls_close_ET = timezone.localize(pd.to_datetime("2020-11-3 19:00:00")).timestamp() * 1000
+    polls_close_PST = timezone.localize(pd.to_datetime("2020-11-3 23:00:00")).timestamp() * 1000
+    date_nov4 = timezone.localize(pd.to_datetime("2020-11-4 00:00:00")).timestamp() * 1000
 
     fig.add_vline(x=polls_close_ET, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>East Coast")
-    polls_close_PST = timezone.localize(pd.to_datetime("2020-11-3 23:00:00")).timestamp() * 1000
     fig.add_vline(x=polls_close_PST, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>West Coast")
     fig.update_layout(annotations=[{**a, **{"y":0.1}}  for a in fig.to_dict()["layout"]["annotations"]])
-    fig.update_layout(xaxis=dict(
-     tickformat="%-I %p",
-        dtick=7_200_000,
-    ))
+    ##fig.update_layout(xaxis=dict(
+    ## tickformat="%-I %p",
+    ##   dtick=7_200_000,
+    ##))
+
+    fig.add_vline(x=polls_close_PST, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>West Coast")
+
     fig.add_vline(x=date_in, line_dash = "dash", line_color = "white")
     ### Add markings for polls close ET/PST/etc?
     st.plotly_chart(fig, use_container_width=True)
@@ -158,7 +162,7 @@ current_hour = current_time.to_pydatetime().hour
 current_time = start_date + pd.to_timedelta(current_hour, unit='h')
 
 
-left2, right2 = st.columns([0.7, 0.3], vertical_alignment="top")
+left2, right2 = st.columns([0.65, 0.35], vertical_alignment="top")
 t = left2.slider(
     "Remember when it was...",
     min_value=start_date,
@@ -210,7 +214,7 @@ col1, col2 = st.columns([0.7, 0.3])
 with col1:
     plot_raw_data(state_curr)
 with col2:
-    st.write("The last update was given at", date_in.strftime("%I:%M%p"), "and currently there is a", status)
+    st.write("The last update was given at", date_in.strftime("%-I:%M%p"), "and currently there is a", status)
     st.write(str(votes_in.iloc[0]), " votes are currently counted")
     st.write("This is", str(curr_percent), " percent out of the", str(max_votes), "votes that will eventually be counted in", option)
     st.write("What did the NYT have to say right now? According to ", liveblog_val['author'].iloc[0], ":", liveblog_val['text_update'].iloc[0])
