@@ -70,14 +70,9 @@ def get_json_data(state_ref):
     min_row['trumpd'] = 0.5
     min_row['closeness'] = 'No Data'
 
-    min_row_2 = min_row
-    min_row_2['timestamp'] = pd.to_datetime('2020-11-03 00:08:36', format='%Y-%m-%d %H:%M:%S').tz_localize('US/Eastern')
-    min_row_2['time'] = pd.to_datetime(min_row_2['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.time
-    min_row_2['date'] = pd.to_datetime(min_row_2['timestamp'], format='%Y-%m-%dT%H:%M:%S').dt.date
-    min_row_2['full_time'] = min_row_2['timestamp']
 
     state_df = pd.concat([state_df, min_row], ignore_index=True)
-    state_df = pd.concat([state_df, min_row_2], ignore_index=True)
+
 ##ADD BEFORE-EVERYTHING DATA POINT WITH "NO DATA"
     state_df = state_df.set_index('full_time')
     state_df.sort_index(inplace=True)
@@ -110,8 +105,18 @@ def plot_raw_data(dat):
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 05:00:00", "2020-11-5 21:23:22.6871"],
+        range=["2020-11-3 05:00:00", "2020-11-4 21:23:22.6871"],
         type="date"
+    ))
+    polls_close_ET = timezone.localize(pd.to_datetime("2020-11-3 19:00:00")).timestamp() * 1000
+
+    fig.add_vline(x=polls_close_ET, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>East Coast")
+    polls_close_PST = timezone.localize(pd.to_datetime("2020-11-3 23:00:00")).timestamp() * 1000
+    fig.add_vline(x=polls_close_PST, line_dash = "solid", line_color = "grey", annotation_text = "Polls Close<br>West Coast")
+    fig.update_layout(annotations=[{**a, **{"y":0.1}}  for a in fig.to_dict()["layout"]["annotations"]])
+    fig.update_layout(xaxis=dict(
+     tickformat="%-I %p",
+        dtick=7_200_000,
     ))
     fig.add_vline(x=date_in, line_dash = "dash", line_color = "white")
     ### Add markings for polls close ET/PST/etc?
