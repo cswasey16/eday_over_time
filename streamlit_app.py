@@ -63,7 +63,15 @@ def read_liveblog_data():
 
     return PA_liveblog
 
-def plot_raw_data():
+def filter_to_current(data, timestamp):
+    timezone = pytz.timezone('America/New_York')
+    dt = timezone.localize(pd.to_datetime("2020-11-3 01:00:00"))
+
+    new_df = data.loc[dt:timestamp]
+
+    return new_df
+
+def plot_raw_data(dat):
     global fig
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=dat['timestamp'], y=dat['bidenj'], name='Biden', mode='lines+markers'))
@@ -71,17 +79,11 @@ def plot_raw_data():
     fig.layout.update(title_text="Ballot Flow", 
                 xaxis=dict(
         autorange=False,
-        range=["2020-11-3 01:00:00", "2020-11-10 21:23:22.6871"],
-        rangeslider=dict(
-            autorange=False,
-            range=["2020-11-3 01:00:00", "2020-11-10 21:23:22.6871"]
-        ),
+        range=["2020-11-3 01:00:00", "2020-11-8 21:23:22.6871"],
         type="date"
     ))
     fig.add_vline(x=date_in[0], line_dash = "dash", line_color = "white")
-    fig.add_annotation(x=date_in[0], y=(biden_hold[0] + .2),
-            text="You Are Here",
-            showarrow=True)
+
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -128,12 +130,13 @@ t = left2.slider(
 
 state_df = get_json_data(state_ref = option)
 
-st.write("Now showing the state at", t)
+
 
 dt_orig = t
 timezone = pytz.timezone('America/New_York')
 dt = timezone.localize(dt_orig) 
 
+state_curr = filter_to_current(data = state_df, timestamp= dt)
 
 
 iloc_idx = state_df.index.get_indexer([dt], method='backfill')  # returns absolute index into df e.g. array([5])
@@ -161,10 +164,10 @@ max_votes = state_df['votes'].max()
 curr_percent = round(votes_in[0] / max_votes, 3)
 
 
-dat = state_df
+
 col1, col2 = st.columns([0.7, 0.3])
 with col1:
-    plot_raw_data()
+    plot_raw_data(state_curr)
 with col2:
     st.write("The last update was given at", date_in[0], "and currently there is a", status)
     st.write(str(votes_in[0]), " votes are currently counted")
